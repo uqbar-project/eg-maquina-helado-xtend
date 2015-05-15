@@ -62,6 +62,7 @@ class StubIceMachine implements IceMachine2000 {
 	override setValue(int code, int value) {
 		if ((value != -1 && value != 1) || (code != MaquinaHelado.SENSOR_TEMPERATURA)) {
 			simularError
+			return
 		}  
 		temperatura += value
 	}

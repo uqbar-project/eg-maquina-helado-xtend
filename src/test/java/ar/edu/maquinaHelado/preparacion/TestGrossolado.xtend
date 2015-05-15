@@ -30,6 +30,8 @@ class TestGrossolado extends AbstractTestPreparacion {
 		val cuantoChocolate = maquina.stock(chocolate)
 		maquina.preparar(grossolado)
 		Assert.assertEquals(cuantoChocolate - 30, maquina.stock(chocolate))
+		Assert.assertEquals(0, maquina.temperatura)
+		Assert.assertFalse(maquina.estaEnError)
 	}
 
 	@Test(expected=BusinessException)

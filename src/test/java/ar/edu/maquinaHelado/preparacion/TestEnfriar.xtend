@@ -1,5 +1,6 @@
 package ar.edu.maquinaHelado.preparacion
 
+import ar.edu.maquinaHelado.exceptions.BusinessException
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
@@ -20,7 +21,7 @@ class TestEnfriar extends AbstractTestPreparacion {
 		Assert.assertEquals(5, maquina.temperatura)
 	}
 
-	@Test(expected=Exception)
+	@Test(expected=BusinessException)
 	def void enfriarA5CuandoLaMaquinaEstaMuyFriaTiraError() {
 		enfriarHasta5.ejecutar(maquinaMuyFria)
 	}

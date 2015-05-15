@@ -27,6 +27,11 @@ class MaquinaHelado {
 	new() {
 		stockIngredientes = new HashMap<Ingrediente, Integer>
 	}
+	
+	new(IceMachine2000 machine2000) {
+		this()
+		iceMachine = machine2000
+	}
 
 	def void preparar(Preparacion preparacion) {
 		this.validarEstadoParaPreparar(preparacion)
@@ -114,6 +119,10 @@ class MaquinaHelado {
 
 	def detenerPaletas() {
 		iceMachine.action(ACTION_DETENER)
+	}
+
+	def ingresarIngrediente(Ingrediente ingrediente, int cantidad) {
+		stockIngredientes.put(ingrediente, cantidad)
 	}
 
 }

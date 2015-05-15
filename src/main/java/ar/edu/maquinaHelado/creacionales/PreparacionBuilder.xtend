@@ -14,9 +14,10 @@ class PreparacionBuilder {
 	Preparacion preparacion
 	
 	new() {
-		preparacion = new Preparacion
-		preparacion.temperaturaMinima = -10
-		preparacion.temperaturaMaxima = 30
+		preparacion = new Preparacion => [
+			temperaturaMinima = -10
+			temperaturaMaxima = 30
+		]
 	}
 	
 	def enfriarHasta(int temp) {

@@ -2,7 +2,6 @@ package ar.edu.maquinaHelado.preparacion
 
 import ar.edu.maquinaHelado.IceMachine2000
 import ar.edu.maquinaHelado.MaquinaHelado
-import ar.edu.maquinaHelado.creacionales.MaquinaHeladoBuilder
 import ar.edu.maquinaHelado.ingredientes.Ingrediente
 import org.junit.Before
 
@@ -21,15 +20,15 @@ class AbstractTestPreparacion {
 		chocolate = new Ingrediente("chocolate", 84)
 		
 		stubIceMachine = new StubIceMachine(15)
-		maquina = new MaquinaHeladoBuilder()
-			.withIceMachine(stubIceMachine)
-			.ingresarIngrediente(azucar, 1000)
-			.ingresarIngrediente(leche, 7500)
-			.ingresarIngrediente(chocolate, 500)
-			.build
-		maquinaMuyFria = new MaquinaHeladoBuilder()
-			.withIceMachine(new StubIceMachine(-2))
-			.ingresarIngrediente(new Ingrediente("leche", 125), 2500)
-			.build
+		
+		maquina = new MaquinaHelado(stubIceMachine) => [
+			ingresarIngrediente(azucar, 1000)
+			ingresarIngrediente(leche, 7500)
+			ingresarIngrediente(chocolate, 500)
+		]
+		maquinaMuyFria = new MaquinaHelado(new StubIceMachine(-2)) => [
+			ingresarIngrediente(new Ingrediente("leche", 125), 2500)
+		]
 	}
+	
 }
