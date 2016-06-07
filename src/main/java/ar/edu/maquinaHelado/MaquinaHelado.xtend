@@ -45,6 +45,7 @@ class MaquinaHelado {
 		if (!preparacion.temperaturaAdecuada(this.temperatura)) {
 			throw new BusinessException("La máquina no está a la temperatura adecuada: " + this.temperatura)
 		}
+		preparacion.ingredientesNecesarios.forEach [ ingNec | stockSuficiente(ingNec.ingrediente, ingNec.cantidadNecesaria)]
 	}
 
 	def void validarEstado() {
@@ -78,9 +79,7 @@ class MaquinaHelado {
 	}
 
 	def agregarIngrediente(Ingrediente ingrediente, int cantidad) {
-		if (!this.stockSuficiente(ingrediente, cantidad)) {
-			throw new BusinessException("No hay suficiente stock de " + ingrediente + ". Stock actual: " + stock(ingrediente) + " vs. cantidad " + cantidad)
-		}
+		this.stockSuficiente(ingrediente, cantidad)
 		iceMachine.add(ingrediente.codigo, cantidad)
 		if (!this.estaEnError) {
 			this.descontarStock(ingrediente, cantidad)
@@ -88,7 +87,9 @@ class MaquinaHelado {
 	}
 
 	def stockSuficiente(Ingrediente ingrediente, int cantidad) {
-		stock(ingrediente) >= cantidad
+		if (stock(ingrediente) < cantidad) {
+			throw new BusinessException("No hay suficiente stock de " + ingrediente + ". Stock actual: " + stock(ingrediente) + " vs. cantidad " + cantidad)
+		}
 	}
 
 	def stock(Ingrediente ingrediente) {

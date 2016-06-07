@@ -33,4 +33,11 @@ class Preparacion {
 		this.pasos.isEmpty
 	}
 	
+	def ingredientesNecesarios() {
+		pasos.fold(newArrayList, [ total, paso | 
+			total.addAll(paso.ingredienteNecesario) 
+			total
+		])
+	}
+	
 }
