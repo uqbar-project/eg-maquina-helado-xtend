@@ -20,7 +20,7 @@ class PreparacionBuilder {
 		]
 	}
 	
-	def enfriarHasta(int temp) {
+	def PreparacionBuilder enfriarHasta(int temp) {
 		preparacion.agregarPaso(new EnfriarHasta(temp))
 		this
 	}

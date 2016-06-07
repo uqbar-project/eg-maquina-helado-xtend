@@ -32,6 +32,7 @@ class TestGrossolado extends AbstractTestPreparacion {
 		Assert.assertEquals(cuantoChocolate - 30, maquina.stock(chocolate))
 		Assert.assertEquals(0, maquina.temperatura)
 		Assert.assertFalse(maquina.estaEnError)
+		Assert.assertTrue(maquina.estaLibre)
 	}
 
 	@Test(expected=BusinessException)
