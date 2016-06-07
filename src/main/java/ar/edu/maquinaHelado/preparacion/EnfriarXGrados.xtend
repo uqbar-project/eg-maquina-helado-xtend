@@ -1,7 +1,6 @@
 package ar.edu.maquinaHelado.preparacion
 
 import ar.edu.maquinaHelado.MaquinaHelado
-import ar.edu.maquinaHelado.exceptions.BusinessException
 
 class EnfriarXGrados extends Paso {
 	
@@ -14,9 +13,7 @@ class EnfriarXGrados extends Paso {
 	override ejecutar(MaquinaHelado maquina) {
 		(1..grados).forEach [
 			maquina.enfriar
-			if (maquina.estaEnError) {
-				throw new BusinessException("Hubo un error al enfriar la maquina de helado")
-			}
+			maquina.validarEstado		
 		] 
 	}
 	
