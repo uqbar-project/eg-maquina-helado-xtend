@@ -1,7 +1,7 @@
 
 # Resolución ejercicio de parcial - Máquina de Helado
 
-![image](images/helado.png) 
+<img src="images/helado.png" height="153px" width="270px"/>
 
 ## Objetivo
 Mostrar cómo se hace una resolución de un parcial de la materia. El enunciado completo está [acá](https://docs.google.com/document/d/18MGJ-HvNZZxwA0gs0M2sNg-tCx8pxfwbOIzQP5n2o5I/edit?usp=sharing)
