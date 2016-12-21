@@ -1,6 +1,8 @@
 
 # Resolución ejercicio de parcial - Máquina de Helado
 
+[![Build Status](https://travis-ci.org/uqbar-project/eg-maquina-helado-xtend.svg?branch=master)](https://travis-ci.org/uqbar-project/eg-maquina-helado-xtend) [![Coverage Status](https://coveralls.io/repos/github/uqbar-project/eg-maquina-helado-xtend/badge.svg?branch=master)](https://coveralls.io/github/uqbar-project/eg-maquina-helado-xtend?branch=master)
+
 <img src="images/helado.png" height="288px" width="165px"/>
 
 ## Objetivo
