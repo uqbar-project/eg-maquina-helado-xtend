@@ -37,10 +37,7 @@ class StubIceMachine implements IceMachine2000 {
 	}
 	
 	override add(int ingredientCode, int amount) {
-		var originalAmount = stock.get(ingredientCode)
-		if (originalAmount == null) {
-			originalAmount = 0
-		}
+		val originalAmount = stock.get(ingredientCode) ?: 0
 		stock.put(ingredientCode, originalAmount + amount)
 	}
 	

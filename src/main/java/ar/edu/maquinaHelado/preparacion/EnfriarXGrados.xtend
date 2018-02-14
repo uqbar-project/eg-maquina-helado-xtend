@@ -13,7 +13,6 @@ class EnfriarXGrados extends Paso {
 	override ejecutar(MaquinaHelado maquina) {
 		(1..grados).forEach [
 			maquina.enfriar
-			maquina.validarEstado		
 		] 
 	}
 	

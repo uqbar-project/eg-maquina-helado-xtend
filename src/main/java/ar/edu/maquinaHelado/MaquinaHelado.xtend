@@ -72,6 +72,7 @@ class MaquinaHelado {
 
 	def enfriar() {
 		iceMachine.setValue(SENSOR_TEMPERATURA, -1)
+		this.validarEstado()
 	}
 
 	def calentar() {
@@ -93,12 +94,7 @@ class MaquinaHelado {
 	}
 
 	def stock(Ingrediente ingrediente) {
-		var stock = stockIngredientes.get(ingrediente)
-		if (stock == null) {
-			stockIngredientes.put(ingrediente, 0)
-			stock = 0
-		}
-		stock
+		stockIngredientes.get(ingrediente) ?: 0
 	}
 
 	def descontarStock(Ingrediente ingrediente, int cantidad) {

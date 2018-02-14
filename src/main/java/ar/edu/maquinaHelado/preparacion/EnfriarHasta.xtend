@@ -17,7 +17,6 @@ class EnfriarHasta extends Paso {
 		}
 		while (maquina.temperatura > temperaturaDeseada) {
 			maquina.enfriar
-			maquina.validarEstado
 		}
 	}
 	
