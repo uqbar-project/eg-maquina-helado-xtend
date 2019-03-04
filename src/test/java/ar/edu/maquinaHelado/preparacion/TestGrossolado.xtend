@@ -9,7 +9,6 @@ import org.junit.Test
 class TestGrossolado extends AbstractTestPreparacion {
 	
 	Preparacion grossolado
-	Preparacion vacia
 	
 	@Before
 	def void initPreparacion() {
@@ -37,8 +36,7 @@ class TestGrossolado extends AbstractTestPreparacion {
 
 	@Test(expected=BusinessException)
 	def void testPreparacionVaciaDaError() {
-		vacia = new PreparacionBuilder()
-			.build
+		new PreparacionBuilder().build
 	}
 	
 }

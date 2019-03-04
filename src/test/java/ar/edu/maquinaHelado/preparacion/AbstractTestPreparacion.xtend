@@ -5,7 +5,7 @@ import ar.edu.maquinaHelado.MaquinaHelado
 import ar.edu.maquinaHelado.ingredientes.Ingrediente
 import org.junit.Before
 
-class AbstractTestPreparacion {
+abstract class AbstractTestPreparacion {
 	IceMachine2000 stubIceMachine
 	protected MaquinaHelado maquina
 	protected MaquinaHelado maquinaMuyFria
