@@ -12,4 +12,8 @@ abstract class Paso {
 		newArrayList
 	}
 	
+	def void esperar(int minutos) {
+		(1..minutos * 60000).forEach [ ]
+	}
+	
 }

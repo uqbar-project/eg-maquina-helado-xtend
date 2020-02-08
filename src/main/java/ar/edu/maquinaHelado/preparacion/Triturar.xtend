@@ -12,7 +12,7 @@ class Triturar extends Paso {
 	
 	override ejecutar(MaquinaHelado maquina) {
 		maquina.triturar()
-		(1..minutos * 60000).forEach [ ]
+		esperar(minutos)
 		maquina.detenerPaletas
 	}
 	

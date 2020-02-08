@@ -12,7 +12,7 @@ class Batir extends Paso {
 	
 	override ejecutar(MaquinaHelado maquina) {
 		maquina.batir()
-		(1..minutos * 60000).forEach [ ]
+		esperar(minutos)
 		maquina.detenerPaletas
 	}
 	

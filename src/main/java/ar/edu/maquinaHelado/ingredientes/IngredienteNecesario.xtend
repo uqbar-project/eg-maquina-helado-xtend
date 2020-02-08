@@ -1,15 +1,9 @@
 package ar.edu.maquinaHelado.ingredientes
 
-import org.eclipse.xtend.lib.annotations.Accessors
+import org.eclipse.xtend.lib.annotations.Data
 
-@Accessors
+@Data
 class IngredienteNecesario {
 	int cantidadNecesaria
 	Ingrediente ingrediente
-	
-	new(int _cantidad, Ingrediente _ingrediente) {
-		cantidadNecesaria = _cantidad
-		ingrediente = _ingrediente
-	}
-	
 }
